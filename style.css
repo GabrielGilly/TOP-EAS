@@ -1,0 +1,48 @@
+/*General layout styling*/
+html body{
+    width: 95vw;
+    height: 95vh;
+    margin: auto;
+}
+body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Etch grid area layout*/
+#sketchArea{
+    width: fit-content;
+}
+#container{
+    width: 500px;
+    height: 500px;
+    border: solid black 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pixel{
+    width: 30px;
+    height: 30px;
+}
+
+/*Button area layout*/
+#buttonsArea{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+button{
+    margin: 20px;
+
+}
+/*Coloring style*/
+.active{
+    background-color: black;
+}
