@@ -3,12 +3,12 @@ The Odin Project - etch a sketch exercice
 
 ## Exercice target
 
-- [ ] Follow the instructions atop Odin’s Recipes project to set up a git repository for this project.
-- [ ] Create a webpage with a 16x16 grid of square divs.
-- [ ] Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file!
-- [ ] It’s best to put your grid squares inside another “container” div (which can go directly in your html).
-- [ ] Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
-- [ ] Add a button to the top of the screen which will clear the current grid and send the user a popup asking for the number of squares per side for the new grid. 
+- [x] Follow the instructions atop Odin’s Recipes project to set up a git repository for this project.
+- [x] Create a webpage with a 16x16 grid of square divs.
+- [x] Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file!
+- [x] It’s best to put your grid squares inside another “container” div (which can go directly in your html).
+- [x] Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
+- [x] Add a button to the top of the screen which will clear the current grid and send the user a popup asking for the number of squares per side for the new grid. 
 - [ ] Once entered, the new grid should be generated in the same total space as before (e.g. 960px wide) so that you’ve got a new sketch pad. Tip: 
 - [ ] Set the limit for the user input to a maximum of 100. A larger number of squares results in more computer resources being used, potentially causing delays, freezing, or crashing that we want to prevent.
 - [ ] Research button tags in HTML and how you can make a JavaScript function run when one is clicked.
