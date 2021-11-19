@@ -23,8 +23,6 @@ function gridCreation(size){
             pixel.classList.add("active");
         });
     };
-        // select all pixel into anodelist for use in other functions
-    const pixels = document.querySelectorAll('.pixel');
     console.log(`a total of ${i-1} div have been added`);
 }
 
@@ -48,15 +46,22 @@ function clearGrid() {
     // promt the user to enter his grid size
 function gridSizePrompt(){
     gridSize = prompt('What size would you like?');
-    if (prompt)
-    console.log(`return:${gridSize}`);
-    deleteGrid();
-    gridCreation(gridSize);
+    if (gridSize<100){
+        console.log(`return:${gridSize}`);
+        deleteGrid();
+        console.log(`call function gridCreation: ${gridSize}`)
+        gridCreation(gridSize);
+    }else{
+        alert('Incorect value, trie something less than 100.');
+    }
 }
     //function to delete all pixels
 function deleteGrid(){
+    console.log('function called to delete all pixels');
+    const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel=>{
-        pixel.remove;
+        pixel.parentNode.removeChild(pixel);
+        console.log(`Delete ${pixel.id}`);
     })
     console.log('deleted all pixels');
 }
