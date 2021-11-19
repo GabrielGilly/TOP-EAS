@@ -1,4 +1,3 @@
-// Default
 
 // Create the divs
     // Get the node where to add the divs
@@ -20,7 +19,7 @@ function gridCreation(size){
             //add event listner
         pixel.addEventListener('mouseenter', (e)=>{
             console.log(`hover ${pixel.id}`);
-            pixel.classList.add("active");
+            changeColorRamdom(pixel);
         });
     };
     console.log(`a total of ${i-1} div have been added`);
@@ -31,6 +30,8 @@ function gridCreation(size){
     // Function that change the color when requested
 function changeColor(pixel){
     pixel.classList= "active"
+    pixel.style.backgroundColor = 'black';
+
 }
 
     // function can be called instead of the changeColor
@@ -38,12 +39,12 @@ function changeColorRamdom(pixel){
     // mark the pixel as active
     pixel.classList="active"
     // create ramdom color
-    let ramdomColor= Math.floor(Math.ramdom()*0xFFFFFF).toString(16);
+    let ramdomColor= Math.floor(Math.random()*0xFFFFFF).toString(16);
     // get a ramdom 0->1 number, multiply by the max color value 0xFFFF, round it, convert to HEXA with `string(16)`
-
+    console.log(`ramdom color: ${ramdomColor}`);
     //Now change the style of the pixel directly
-    pixel.style=`backgroud-color: ${ramdomColor};`
-    }
+    pixel.style.backgroundColor = `#${ramdomColor}`;
+};
 
 // Clear all div to default color
 function clearGrid() {
