@@ -33,11 +33,24 @@ function changeColor(pixel){
     pixel.classList= "active"
 }
 
+    // function can be called instead of the changeColor
+function changeColorRamdom(pixel){
+    // mark the pixel as active
+    pixel.classList="active"
+    // create ramdom color
+    let ramdomColor= Math.floor(Math.ramdom()*0xFFFFFF).toString(16);
+    // get a ramdom 0->1 number, multiply by the max color value 0xFFFF, round it, convert to HEXA with `string(16)`
+
+    //Now change the style of the pixel directly
+    pixel.style=`backgroud-color: ${ramdomColor};`
+    }
+
 // Clear all div to default color
 function clearGrid() {
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel =>{
         pixel.classList.remove("active");
+        pixel.style= `background-color: ${white}`;
     });
     console.log('grid cleared');
 };
