@@ -1,4 +1,3 @@
-// Default
 
 // Create the divs
     // Get the node where to add the divs
@@ -20,11 +19,9 @@ function gridCreation(size){
             //add event listner
         pixel.addEventListener('mouseenter', (e)=>{
             console.log(`hover ${pixel.id}`);
-            pixel.classList.add("active");
+            changeColorRamdom(pixel);
         });
     };
-        // select all pixel into anodelist for use in other functions
-    const pixels = document.querySelectorAll('.pixel');
     console.log(`a total of ${i-1} div have been added`);
 }
 
@@ -33,13 +30,28 @@ function gridCreation(size){
     // Function that change the color when requested
 function changeColor(pixel){
     pixel.classList= "active"
+    pixel.style.backgroundColor = 'black';
+
 }
+
+    // function can be called instead of the changeColor
+function changeColorRamdom(pixel){
+    // mark the pixel as active
+    pixel.classList="active"
+    // create ramdom color
+    let ramdomColor= Math.floor(Math.random()*0xFFFFFF).toString(16);
+    // get a ramdom 0->1 number, multiply by the max color value 0xFFFF, round it, convert to HEXA with `string(16)`
+    console.log(`ramdom color: ${ramdomColor}`);
+    //Now change the style of the pixel directly
+    pixel.style.backgroundColor = `#${ramdomColor}`;
+};
 
 // Clear all div to default color
 function clearGrid() {
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel =>{
         pixel.classList.remove("active");
+        pixel.style= `background-color: ${white}`;
     });
     console.log('grid cleared');
 };
@@ -48,15 +60,22 @@ function clearGrid() {
     // promt the user to enter his grid size
 function gridSizePrompt(){
     gridSize = prompt('What size would you like?');
-    if (prompt)
-    console.log(`return:${gridSize}`);
-    deleteGrid();
-    gridCreation(gridSize);
+    if (gridSize<100){
+        console.log(`return:${gridSize}`);
+        deleteGrid();
+        console.log(`call function gridCreation: ${gridSize}`)
+        gridCreation(gridSize);
+    }else{
+        alert('Incorect value, trie something less than 100.');
+    }
 }
     //function to delete all pixels
 function deleteGrid(){
+    console.log('function called to delete all pixels');
+    const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel=>{
-        pixel.remove;
+        pixel.parentNode.removeChild(pixel);
+        console.log(`Delete ${pixel.id}`);
     })
     console.log('deleted all pixels');
 }
